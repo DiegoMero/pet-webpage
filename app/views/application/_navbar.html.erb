@@ -1,5 +1,5 @@
-<nav >
-  <div>
+<nav>
+  <div class="flex justify-end gap-2 bg-[#2E3532] text-white pr-3 h-[5vh]">
     <% if user_signed_in? %>
       <%= button_to("Log Out", destroy_user_session_path, method: :delete) %>
     <% else %>
@@ -7,7 +7,7 @@
       <%= link_to("Register", new_user_registration_path) %>
     <% end %>
   </div>
-  <div class="flex justify-between h-[15vh] items-center pl-3 pr-3 bg-[#8B2635] text-white">
+  <div class="flex justify-between items-center pl-3 pr-3 bg-[#8B2635] text-white h-[15vh]">
     <div class="flex items-center gap-2">
       <svg class="border-2 p-1 rounded-full border-white" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none">
         <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -15,11 +15,7 @@
       </svg>
       <div>
         <h2 class="text-xl">
-          <% if current_user %>
-            <%= current_user.username %>
-          <% else %>
-            Guest
-          <% end %>
+          <%= current_user ? current_user.username : "Guest" %>
         </h2>
         <div class="flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="_x32_" width="26" height="20" viewBox="0 0 512 512" xml:space="preserve">  
@@ -27,11 +23,8 @@
 	          <path fill="#FFA987" d="M264.375,170.594h-54.5c-8.703,0-15.75,7.031-15.75,15.719V347c0,8.688,7.047,15.719,15.75,15.719h7.906   c8.688,0,15.734-7.031,15.734-15.719v-45.25h30.859c41.266,0,74.844-29.406,74.844-65.594   C339.219,200,305.641,170.594,264.375,170.594z M264.375,267.219h-30.859v-62.125h30.859c19.547,0,35.438,13.938,35.438,31.063   S283.922,267.219,264.375,267.219z"/>
           </svg>
           <h3>
-            <% if current_user %>
-              <%= current_user.petCoins %> PetCoins
-            <% else %>
-              0 PetCoins
-            <% end %>
+            <%= current_user ? current_user.petCoins : 0 %>
+            PetCoins
           </h3>
         </div>
       </div>

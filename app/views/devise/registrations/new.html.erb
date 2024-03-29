@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+<div class="flex flex-col items-center h-[80vh] justify-center">
+
+<h2 class="text-2xl">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -26,9 +28,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
+  <div class="actions text-center bg-[#8B2635] text-white rounded-lg p-3 mt-5 mb-5">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>

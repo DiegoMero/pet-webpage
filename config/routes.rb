@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :pets, only: [:index, :show]
+  resources :donations, only: [:index]
 end

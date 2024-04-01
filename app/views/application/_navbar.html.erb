@@ -1,5 +1,5 @@
 <nav>
-  <div class="flex justify-end gap-2 bg-[#2E3532] text-white pr-3 h-[5vh]">
+  <div class="flex justify-end gap-2 bg-[#2E3532] text-white pr-3 h-[5vh] md:pr-20">
     <% if user_signed_in? %>
       <%= button_to("Log Out", destroy_user_session_path, method: :delete) %>
     <% else %>
@@ -7,7 +7,7 @@
       <%= link_to("Register", new_user_registration_path) %>
     <% end %>
   </div>
-  <div class="flex justify-between items-center pl-3 pr-3 bg-[#8B2635] text-white h-[15vh]">
+  <div class="flex justify-between items-center pl-3 pr-3 bg-[#8B2635] text-white h-[15vh] md:pl-20 md:pr-20">
     <div class="flex items-center gap-2">
       <svg class="border-2 p-1 rounded-full border-white" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none">
         <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -29,8 +29,16 @@
         </div>
       </div>
     </div>
-    <svg width="26" height="20" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="md:hidden" width="26" height="20" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447715 2 0 1.55228 0 1ZM0 6C0 5.44772 0.447715 5 1 5L17 5C17.5523 5 18 5.44772 18 6C18 6.55229 17.5523 7 17 7L1 7C0.447715 7 0 6.55228 0 6ZM1 10C0.447715 10 0 10.4477 0 11C0 11.5523 0.447715 12 1 12H17C17.5523 12 18 11.5523 18 11C18 10.4477 17.5523 10 17 10H1Z" fill="#FFF" />
     </svg>
+    <div class="md:flex gap-10 text-3xl hidden">
+      <%= link_to pets_path do %>
+        <h2 class="hover:underline">Pets</h2>
+      <% end %>
+      <%= link_to donations_path do %>
+        <h2 class="hover:underline">Donations</h2>
+      <% end %>
+    </div>
   </div>
 </nav>

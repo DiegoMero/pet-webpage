@@ -1,7 +1,7 @@
-<section class="p-3 flex flex-col gap-5">
+<section class="p-3 flex flex-col gap-5 md:pr-20 md:pl-20">
   <h2 class="text-3xl font-semibold text-center">Our Future Stars</h2>
   <h3 class="text-xl text-center">Click or touch on a pet to donate and more!</h3>
-  <ul class="flex flex-col gap-5">
+  <ul class="flex flex-col gap-5 md:grid md:grid-cols-2">
     <% @pets.each do |pet| %>
       <%= link_to pet_path(pet) do %>
         <%= render "application/petCard", pet: pet %>

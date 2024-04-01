@@ -1,7 +1,7 @@
-<section class="p-3 flex flex-col gap-5">
+<section class="p-3 flex flex-col gap-5 md:pr-20 md:pl-20 md:justify-center md:h-[80vh]">
   <%= render "application/petCard", pet: @pet %>
-  <div class="flex justify-between ">
-    <button class="text-2xl p-1 bg-[#8B2635] text-white rounded-lg">Donate!</button>
-    <button class="text-2xl p-1 bg-[#8B2635] text-white rounded-lg">Be a sponsor!</button>
+  <div class="flex justify-around">
+    <button class="text-2xl p-1 bg-[#8B2635] text-white rounded-lg md:text-5xl md:p-6">Donate!</button>
+    <button class="text-2xl p-1 bg-[#8B2635] text-white rounded-lg md:text-5xl md:p-6">Be a sponsor!</button>
   </div>  
 </section>
